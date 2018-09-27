@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.shop{
+    background-image: url('../F/flowershop/flowershop.jpg');
+    background-size: cover;
+    height:120vh;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+#layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+}
+
+.shop section{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    z-index: 1;
+}
+
+.shop h1{
+    font-size: 45px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.shop button{
+    background-color: rgb(146, 224, 28);
+    color: white;
+    font-size: 35px;
+    width: 6em;
+    border: 0px;
+}
+
+/*
+Main content
+*/
+
+main {
+    width: 100%;
+    background: rgb(171, 212, 108); 
+    border: 1px solid black;
+}
+
+main div {
+    width:50%;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+main section {
+    width:200px;
+    border: 1px solid blue;
+    display: inline-block;
+}
+
+main section img{
+    margin:0 30px;
+}
+
+
+
+

@@ -1,0 +1,30 @@
+div {
+    width: 100px;
+    height: 100px;
+}
+
+
+#blue {
+    float: left;
+    background-color: blue;
+}
+
+#green{
+    float: right;
+    background-color: green;
+}
+
+
+
+.grid:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+
+#red {
+    margin: auto;
+    background-color: red;
+}
