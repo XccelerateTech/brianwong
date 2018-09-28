@@ -7,7 +7,7 @@ body{
 .shop{
     background-image: url('../F/flowershop/flowershop.jpg');
     background-size: cover;
-    height:120vh;
+    height:70vh;
     position: relative;
     padding: 0;
     margin: 0;
@@ -41,9 +41,11 @@ body{
 .shop button{
     background-color: rgb(146, 224, 28);
     color: white;
-    font-size: 35px;
-    width: 6em;
-    border: 0px;
+    font-size: 30px;
+    width: 170px;
+    height: 50px;
+    border: none;
+    border-radius: 22px;
 }
 
 /*
@@ -53,24 +55,31 @@ Main content
 main {
     width: 100%;
     background: rgb(171, 212, 108); 
-    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 40px;
+    padding-bottom: 50px;
 }
 
-main div {
-    width:50%;
-    margin: 0 auto;
-    border: 1px solid red;
+main img{
+    height: 80%;
 }
 
 main section {
-    width:200px;
-    border: 1px solid blue;
-    display: inline-block;
+    width: 40%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-main section img{
-    margin:0 30px;
+main p{
+    width: 200px;
 }
+
+
 
 
 
