@@ -76,7 +76,8 @@ main section {
 }
 
 main p{
-    width: 200px;
+    width: 200px; 
+    /* equalize the width of the content */
 }
 
 
