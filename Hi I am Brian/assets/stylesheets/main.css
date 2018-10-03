@@ -1,0 +1,352 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+  ========================================
+  Custom styles
+  ========================================
+*/
+
+
+.inverse-color{
+	background: #000000;
+	color: #ffffff;
+}
+/*
+  ========================================
+  Grid
+  ========================================
+*/
+
+*,
+*:before,
+*:after {
+   -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.grid {
+	width: 960px;
+	margin: 0 auto;
+
+}
+
+.col-1-2 {
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+}
+
+
+
+
+
+/*
+  ========================================
+  Typography
+  ========================================
+*/
+
+h1,h2,h3,h4 {
+	font-family: 'Anton', sans-serif;
+}
+
+a, p{
+	font-weight: 580;
+	font-family: 'Poiret One', cursive;
+}
+
+.inverse-color a,p{
+	font-size: 25px;
+}
+
+.travel a{
+	font-size: 40px;
+}
+
+
+
+h1 {
+  font-size: 100px;
+  line-height: 44px;
+}
+h2 {
+  font-size: 80px;
+  line-height: 44px;
+}
+h3 {
+	font-size: 60px;
+}
+
+strong {
+  font-weight: 700;
+}
+cite, em {
+  font-style: italic;
+}
+
+/*
+  ========================================
+  header
+  ========================================
+*/
+
+header {
+	width: 100%;
+	height: 943px;
+	background: url("../image/IMG_0675.jpg");
+	background-position: center 80%; 
+	background-size: cover;
+	background-attachment: fixed;
+	padding: 250px 0 0 300px;
+
+}
+
+
+
+.logo {
+	font-weight: 300;
+	font-size:100px;
+	color: #ffffff;
+
+	
+}
+
+
+
+/*
+  ========================================
+  about me
+  ========================================
+*/
+section.about-me {
+	text-align: left; 
+}
+ 
+.about-me section{
+	padding: 66px 30px 66px 15px;
+}
+
+
+.about-me h3 {
+	text-align: center;
+	padding-top: 150px;
+}
+
+.about-me p {
+	line-height: 80px;
+}
+
+/*
+  ========================================
+  Special Memories during trips
+  ========================================
+*/
+
+
+section.travel{
+	width: 100%;
+}
+
+.travel section:first-child{
+	color: #FF4E20;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0 ;
+	z-index: 1;
+}
+
+
+.travel h3{
+	display: block;
+	padding-top: 45px;
+	padding-left: 30px;
+	padding-bottom: 25px
+}
+
+.travel nav{
+	height: 100%;
+	display: block;
+	padding-right:0;
+	letter-spacing: 5px;
+	padding-left: 30px;
+	padding-bottom: 45px;
+}
+
+
+.Yokohama {
+	background: url("../image/IMG_3453.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.Sensō-ji {
+	background: url("../image/IMG_2972.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
+.Toy {
+	background: url("../image/IMG_1816.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+
+}
+.Nara {
+	background: url("../image/IMG_4230.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	
+}
+
+.Osaka {
+	background: url("../image/IMG_4575.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.sheeps {
+	background: url("../image/IMG_0683.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	
+}
+.sky {
+	background: url("../image/IMG_0851.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	
+
+}
+.Sunflower {
+	background: url("../image/IMG_8810.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+figure {
+	position: relative;
+	display: block;
+	width: 100%;
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	height: 110vh;
+}
+
+
+
+figcaption {
+	width: 100%;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	right:0;
+	padding: 0 10px;
+}
+
+figcaption p {
+	color: #ff2033;
+	text-align: right;
+	font-size: 50px;
+	line-height: 100%;
+	font-weight: 600;
+}
+
+figcaption p:first-child{
+	padding-top: 45px;
+}
+
+
+
+
+/*
+  ========================================
+  footer
+  ========================================
+*/
+
+footer {
+	padding: 30px 0;
+	text-align: center;
+}
+
+li {
+	display: inline-block;
+}
+
+li:first-child {
+	padding-right: 50px;
+}
+
+/*
+  ========================================
+  Links
+  ========================================
+*/
+
+a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.pagination a{
+    color: #FF4E20;
+}
+
+a:hover {
+	color: #E2B13C;
+}
+
+
+
+
+
