@@ -143,7 +143,7 @@ header {
 	background: url("../image/IMG_0675.jpg");
 	background-position: center 80%; 
 	background-size: cover;
-	background-attachment: fixed;
+	
 	padding: 250px 0 0 300px;
 
 }
@@ -223,59 +223,58 @@ section.travel{
 .Yokohama {
 	background: url("../image/IMG_3453.jpg");
 	background-size: cover;
-	background-attachment: fixed;
+	
 }
 
 .Sensō-ji {
 	background: url("../image/IMG_2972.jpg");
 	background-size: cover;
-	background-attachment: fixed;
+	
 }
 
 
 .Toy {
 	background: url("../image/IMG_1816.jpg");
 	background-size: cover;
-	background-attachment: fixed;
+	
 
 }
 .Nara {
 	background: url("../image/IMG_4230.jpg");
 	background-size: cover;
-	background-attachment: fixed;
+	
 	
 }
 
 .Osaka {
 	background: url("../image/IMG_4575.jpg");
 	background-size: cover;
-	background-attachment: fixed;
+	
 }
 
 .sheeps {
 	background: url("../image/IMG_0683.jpg");
 	background-size: cover;
-	background-attachment: fixed;
+	
 	
 }
 .sky {
 	background: url("../image/IMG_0851.jpg");
 	background-size: cover;
-	background-attachment: fixed;
+	
 	
 
 }
 .Sunflower {
 	background: url("../image/IMG_8810.jpg");
 	background-size: cover;
-	background-attachment: fixed;
+	
 }
 
 figure {
 	position: relative;
 	display: block;
 	width: 100%;
-	vertical-align: top;
 	margin: 0;
 	padding: 0;
 	line-height: 0;
@@ -291,9 +290,13 @@ figcaption {
 	top: 0;
 	right:0;
 	padding: 0 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 }
 
 figcaption p {
+	max-width:650px;
 	color: #ff2033;
 	text-align: right;
 	font-size: 50px;
