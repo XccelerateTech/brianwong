@@ -194,7 +194,10 @@ section.travel{
 	width: 100%;
 }
 
-.travel section:first-child{
+.navbar a.navlink {
+	width: 3rem;
+}
+/* .travel section:first-child{
 	color: #FF4E20;
 	position: -webkit-sticky;
 	position: sticky;
@@ -217,7 +220,7 @@ section.travel{
 	letter-spacing: 5px;
 	padding-left: 30px;
 	padding-bottom: 45px;
-}
+} */
 
 
 .Yokohama {
@@ -322,12 +325,8 @@ footer {
 	text-align: center;
 }
 
-li {
+.footer li {
 	display: inline-block;
-}
-
-li:first-child {
-	padding-right: 50px;
 }
 
 /*
