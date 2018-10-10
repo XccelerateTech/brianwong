@@ -1,7 +1,8 @@
 let childRemover = function(id){
-    targetElement = document.getElementById(id);
-    for(let child of targetElement.children){
+    let child = document.getElementById(id).firstChild;
+    while(child){
         child.remove();
+        child = document.getElementById(id).firstChild;
     }
 }
 
