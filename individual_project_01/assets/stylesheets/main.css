@@ -1,0 +1,364 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.inverse-color{
+	background: #000000;
+	color: #ffffff;
+}
+
+
+/*
+  ========================================
+  Grid
+  ========================================
+*/
+
+*,
+*:before,
+*:after {
+   -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+/*
+  ========================================
+  header
+  ========================================
+*/
+
+header {
+	width: 100%;
+	height: 100vh;
+	background: url("../image/background/IMG_0675.JPG");
+	background-position: center 80%; 
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+}
+
+
+#logo{
+	position: absolute;
+	top: 30vh;
+	left: 10%;
+}
+
+#logo h1{
+	margin:0;
+	padding:0;
+	font-weight: 300;
+	font-size:5rem;
+	color: transparent;
+	background-image:linear-gradient(to top, #545454 0, #ffffff 50%);
+	-webkit-background-clip: text;
+	background-clip: text;
+}
+
+
+
+@media (max-width: 736px){
+	#logo h1{
+		font-size:4rem;
+	}
+}
+
+@media (max-width: 540px){
+	#logo h1{
+		font-size:3rem;
+	}
+}
+
+#logo a{
+	text-decoration: none;
+}
+
+#logo i{
+	display: inline-block;
+	color: #000000;
+	font-size: 3rem;
+	margin-right:1rem;
+}
+
+#logo i:hover{
+	color: orange;
+}
+
+
+
+/*
+  ========================================
+  about me
+  ========================================
+*/
+
+#aboutMe{
+	width: 100%;
+	height: 80vh;
+	position: relative;
+}
+
+#aboutMe .btn{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+#aboutMe p{
+	display: block;
+	position: absolute;
+	font-size: 50px;
+}
+
+#a{
+	top:5%;
+	right:10%;
+}
+
+#b{
+	top:18%;
+	left:10%;
+}
+
+#c{
+	top:30%;
+	left:23%;
+}
+
+#d{
+	bottom: 10%;
+	left:23%;
+}
+
+#e{
+	bottom: 25%;
+	left:10%;
+}
+
+@media (max-width: 1240px){
+	#aboutMe p{
+		font-size:40px;
+	}
+}
+
+@media (max-width: 965px){
+	#aboutMe p{
+		font-size:32px;
+	}
+}
+
+@media (max-width:693px){
+	#aboutMe p{
+		font-size:23px;
+	}
+}
+
+
+/*
+  ========================================
+ travel
+  ========================================
+*/
+
+#travel{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.container-fluid{
+	padding:0;
+}
+
+.chapter{
+	height: 100%;
+}
+
+.bg-france{
+	background: url("../image/background/IMG_8810.JPG");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.bg-tokyo{
+	background: url("../image/background/IMG_3053.JPG");
+	background-size: cover;
+	background-attachment: fixed;
+}
+.bg-tasmania{
+	background: url("../image/background/IMG_0851.JPG");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
+.row{
+	height: 100%;
+	align-items: center;
+}
+
+.column{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.chapter .column:nth-child(2){
+	border-width: 0 2px 0 2px;
+	border-style: solid;
+	border-color:grey;
+}
+
+.chapter .column h3{
+	margin-bottom: 0;
+}
+
+
+.chapter .column > div{
+	width: 100%;
+	height: 40vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0.75;
+	transition:0.8s;
+	position: relative;
+}
+
+
+
+.chapter .France{
+	background-color: #F35336;
+	color: #ffffff;
+}
+
+
+.chapter .Tokyo{
+	background-color:#8DB255;
+	color: #ffffff;
+
+}
+
+.chapter .Tasmania{
+	background-color: #4D8FAC;
+	color: #ffffff;
+}
+
+.chapter .inactive{
+	background-color: transparent;
+	color: transparent;
+}
+
+
+.albums > div{
+	position: absolute;
+	top: 0;
+	left: 105%;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.85);	
+	transition: .5s;
+}
+
+.albums > div.active{
+	transform: translate(-105%,0)
+}
+
+
+
+#travel div.cross{
+	height: 10vh;
+	display: flex;
+	align-items: center;
+}
+
+.albums .cross i{
+	color: #ffffff;
+	font-size: 6vh;
+	margin-left: 5px;
+}
+
+.albums .France i:hover{
+	color: #F35336;
+}
+
+.albums .Tokyo i:hover{
+	color: #8DB255;
+}
+
+.albums .Tasmania i:hover{
+	color: #4D8FAC;
+}
+
+.photo-album .row div{
+	height: 30vh;
+	text-align: center;
+}
+
+.photo-album .row img{
+	max-height: 90%;
+}
+
+
+
+
+@media (max-width: 768px){
+	#travel, .albums > div{
+		height: 160vh;
+	}
+
+	.chapter .column{
+		height: 33.33%;
+	}
+
+	.chapter .column:nth-child(2){
+		border-width: 2px 0 2px 0;
+
+	}
+	.chapter .column div:first-child{
+		width: 50%;
+	}
+}
+
+@media (max-width: 576px){
+	#travel, .albums > div{
+		height: 280vh;
+	}
+}
+
+
+/*
+  ========================================
+  contact
+  ========================================
+*/
+
+footer{
+	height: 10vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer i{
+	color: #ffffff;
+	font-size: 2.5rem;
+}
+
+footer i:first-child{
+	margin-right: 20px;
+}
+
+footer i:hover{
+	color: blueviolet;
+}
+
+
+
+
