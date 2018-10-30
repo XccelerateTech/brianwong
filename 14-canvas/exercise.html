@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+    </style>
+    <title>Document</title>
+    
+</head>
+<body>
+    <canvas id="canvas"  width="1000" height="1000">Your browser does not support Canvas</canvas>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+        class Drawing{
+            constructor(x,y,width,height){
+                this.draw = () => {
+                    ctx.fillRect(x,y,width,height);
+                };
+            }
+
+            dot(start){
+                ctx.beginPath();
+                ctx.lineTo(start[0],start[1]);
+                ctx.stroke();
+            }
+
+
+            drawLine(start,end){
+                ctx.beginPath();
+                ctx.moveTo(start[0],start[1]);
+                ctx.lineTo(end[0],end[1]);
+                ctx.stroke();
+            };
+
+            curveLine(start,cp,end){
+                ctx.beginPath();
+                ctx.moveTo(start[0],start[1]);
+                ctx.quadraticCurveTo(cp[0],cp[1],end[0],end[1]);
+                ctx.stroke();
+            };
+
+            door(topLeft,topRight,bottomLeft,bottomRight,cp){
+                ctx.beginPath();
+                ctx.moveTo(topLeft[0],topLeft[1]);
+                ctx.lineTo(bottomLeft[0],bottomLeft[1]);
+                ctx.lineTo(bottomRight[0],bottomRight[1]);
+                ctx.lineTo(topRight[0],topRight[1]);
+                ctx.quadraticCurveTo(cp[0],cp[1],topLeft[0],topLeft[1])
+                ctx.stroke();
+            }
+        };
+
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let rect = new Drawing(300,34,100,200);
+        console.log(rect);
+        
+        rect.dot([123,435]);
+        rect.draw();
+        rect.curveLine([10,20],[300,200],[400,400])
+        rect.door([30,30],[60,30],[30,80],[60,80],[45,10]);
+
+        let dragging = false;
+        ctx.strokeStyle = "#df4b26";
+        ctx.lineJoin = "round";
+        ctx.lineWidth = 5;
+        $('#canvas').mousedown(function(e){
+            let mouseX = e.offsetX;
+            let mouseY = e.offsetY;
+            ctx.moveTo(mouseX,mouseY);
+            draw(mouseX,mouseY);
+            dragging = true;
+        });
+        $('#canvas').mousemove(function(e){
+            if(dragging){
+                let mouseX = e.offsetX;
+                let mouseY = e.offsetY;
+                draw(mouseX,mouseY);
+            }
+        });
+        $('#canvas').mouseup(function(e){
+            dragging = false;
+            ctx.closePath();
+            ctx.stroke();
+
+        });
+        $('#canvas').mouseleave(function(e){
+            dragging = false;
+            ctx.closePath();
+            ctx.stroke();
+        });
+
+        function draw(x,y){
+                    ctx.lineTo(x,y);
+                    ctx.stroke();
+                }
+    })    
+</script>
+</html>
