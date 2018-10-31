@@ -5,7 +5,7 @@ http.createServer((req,res) => {
     let url = req.url;
     if(req.url === '/'){
         fs.createReadStream(__dirname + '/flowershop.html').pipe(res);
-    }else if(req.url == url){ 
+    }else if(req.url){ 
         fs.createReadStream(__dirname +url).pipe(res);   
     }else {
         res.writeHead(404);
