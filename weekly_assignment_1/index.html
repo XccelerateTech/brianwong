@@ -7,8 +7,12 @@
     <title>Dropbox</title>
 </head>
 <body>
-    <form action="/login" methond='post'>
-        <input type="text">
+
+    <h1>Dropbox with cache</h1>
+    <form action="/upload" method='post' enctype="multipart/form-data">
+        <p>upload file here: <input type="file" name="uploadFile"></p> 
+        <button>submit</button>
     </form>
+    <p id="uploadList"> uploaded file list:</p>
 </body>
 </html>

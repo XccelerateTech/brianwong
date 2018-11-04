@@ -9,6 +9,7 @@
   "author": "Brian",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "express-fileupload": "^1.0.0"
   }
 }

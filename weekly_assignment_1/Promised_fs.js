@@ -2,8 +2,10 @@ let fs = require('fs')
 
 class PromisedFs{
     constructor(){};
-    async createReadStream(path){
-       return fs.createReadStream(path)
+    createReadStream(path){
+        return new Promise((resolve,reject)=>{
+            resolve(fs.createReadStream(path))
+        })
     }
 }
 
