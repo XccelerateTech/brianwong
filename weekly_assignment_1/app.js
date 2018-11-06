@@ -21,6 +21,7 @@ app.post('/upload',(req,res)=>{  //upload files
         if (err){
             return res.status(500).send(err)
         }
+    res.send('file uploaded')
     })
 })
 
@@ -30,37 +31,13 @@ async function getName(req){
 
 
 
-app.get('/:filename',async (req,res)=>{
+app.get('/:filename', async (req,res)=>{ //download files
     let filename = await getName(req)
-    let file = fs.createReadStream(__dirname+'/upload/'+filename)
-
-    file.on('data',(chunk))
+    res.download(__dirname+'/upload/'+filename);
+    // res.attachment(filename)
+    // fs.createReadStream(__dirname+'/index.html').pipe(res)
 })
-// async function download(res,path){
-//     res.download(path)
-// }
 
-
- 
-
-// app.get('/:filename', async (req,res,next)=>{ //download files
-//     let filename = await getName(req)
-//     let error = false
-//     // fs.createReadStream(__dirname+'/upload/'+filename).pipe(res)
-//     await download(res,__dirname+'/upload/'+filename,err =>{
-//         if(err){
-//             error = true;
-//         }else{
-//             next()
-//         }
-//     })
-    
-    
-// })
-
-// app.get('/:filename',(req,res)=>{
-//     res.send('file downloaded')
-// })
 
 
 

@@ -20,12 +20,12 @@ class SecretHandshake{
                 if(exp<5){
                     num_arr.unshift(exp);
                 }
-                if (store_code <= 1 && store_code>0){ 
+                if (store_code == 1){ 
                     num_arr.unshift(0);
                     break loop;
                 }
             }
-            if(num_arr.indexOf(4) != -1){
+            if(num_arr.indexOf(4) != -1){ //binary 10000: code of reverse
                 num_arr.splice(num_arr.indexOf(4),1)
                 num_arr = num_arr.reverse();
             }
