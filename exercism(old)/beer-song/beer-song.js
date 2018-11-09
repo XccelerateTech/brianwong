@@ -16,7 +16,7 @@ function BeeSong(){
     }
 
     this.sing = function(start,end=0){
-        song = "";
+        let song = "";
         for(let countdown = start; countdown >= end; countdown--) {
             if(countdown>end){
                 song = song + this.verse(countdown)+ "\n";

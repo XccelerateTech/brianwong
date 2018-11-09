@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dropbox</title>
+</head>
+<body>
+
+    <h1>Dropbox with cache</h1>
+    <form action="/upload" method='post' enctype="multipart/form-data">
+        <p>upload file here: <input type="file" name="uploadFile"></p> 
+        <button>submit</button>
+    </form>
+    <p id="uploadList"> uploaded file list:</p>
+    {{{body}}}
+</body>
+</html>
