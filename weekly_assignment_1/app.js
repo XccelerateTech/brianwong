@@ -3,19 +3,24 @@ let express = require('express')
 let fileUpLoad = require('express-fileupload')
 let fs = require('fs')
 let hbs = require('express-handlebars')
+let PromiseFs = require('./Promised_fs')
 
 //create instance
 let app = express();
+let pfs = new PromiseFs();
 
 //load application
 app.use(fileUpLoad());
 app.engine('handlebars',hbs({defaultLayout:'index'}))
 app.set('view engine','handlebars')
 
-app.get('/', (req,res)=>{
-    let arr = await fs.readdir(__dirname+'upload')
-    console.log(arr)
-    res.render('fileList',{file: ['files','les']})
+
+app.get('/', async (req,res)=>{
+    let arr = await pfs.readdir(__dirname+'/upload')
+    if(arr.indexOf('.DS_Store') != -1){
+        arr.splice(arr.indexOf('.DS_Store'),1);
+    }
+    res.render('fileList',{file: arr})
 })
 
 
@@ -38,8 +43,6 @@ async function getName(req){
 app.get('/:filename', async (req,res)=>{ //download files
     let filename = await getName(req)
     res.download(__dirname+'/upload/'+filename);
-    // res.attachment(filename)
-    // fs.createReadStream(__dirname+'/index.html').pipe(res)
 })
 
 

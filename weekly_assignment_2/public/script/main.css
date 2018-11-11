@@ -16,10 +16,17 @@ section h3 {
     height: 70px;
     overflow: scroll;
     display: flex;
-    align-content: center;
+    justify-content: space-between;
     margin-bottom: 30px;
 }
 
 .note p{
+    width: 80%;
     padding-left: 10px; 
+}
+
+.bin {
+    background-color: #ff0000;
+    width: 15%;
+    height: 100%;
 }

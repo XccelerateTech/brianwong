@@ -90,6 +90,7 @@ describe('Testing NoteService',function(){
      })
 
 
+
     it('index changes when deleting items that are not the last one', done => {
         const noteService = new NoteService('test.json');
         noteService.addNote('test')

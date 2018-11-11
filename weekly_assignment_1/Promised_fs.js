@@ -2,10 +2,16 @@ let fs = require('fs')
 
 class PromisedFs{
     constructor(){};
-    createReadStream(path){
+    readdir(path){
         return new Promise((resolve,reject)=>{
-            resolve(fs.createReadStream(path))
-        })
+            fs.readdir(path,(err,files)=>{
+                if(err){
+                    reject(err)
+                }else{
+                    resolve(files)
+                }
+            });
+        });
     }
 }
 

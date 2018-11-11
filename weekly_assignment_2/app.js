@@ -2,26 +2,58 @@ const express = require('express')
 const hds = require('express-handlebars')
 const bodyParser = require('body-parser')
 const NoteService = require('./NoteService')
+const basicAuth = require('express-basic-auth')
 
 let app = express();
+let user; 
 const note = new NoteService('notesFile.json')
+const userList = new NoteService('userList.json')
 
-
+//set view engine
 app.engine('handlebars',hds({defaultLayout: 'main'}))
 app.set('view engine','handlebars')
 
 app.use(express.static('public'))
+
 app.use(bodyParser.urlencoded({ extended: false })) 
 
-app.put('/note',async (req,res)=>{ //incompleted
-    await note.addNote(req.body.note)
-    res.end()
-})
+//set basic authentication
+app.use(basicAuth({
+    authorizer: myAuthrizer,
+    challenge: true
+}))
+
+
+async function myAuthrizer(username,password){
+    let users = await userList.listNote()
+    return users.some((item)=>{
+        if(item.username == username && item.password == password){
+            user = item.username;
+            return true;
+        }else{
+            return false;
+        }
+    })
+
+
+}
 
 app.get('/',async (req,res)=>{ 
     let noteList = await note.listNote()
-    let list = {notes: noteList, user: 'brian'} 
+    let list = {notes: noteList, user: user} 
     res.render('hello',list)
+})
+
+//save note in server
+app.put('/note',async (req,res)=>{ 
+    await note.addNote(req.body.note);
+    res.end();
+})
+
+//delete note in server
+app.delete('/note', async (req,res)=>{
+    await note.deleteNote(req.body.index);
+    res.end();
 })
 
 app.listen(8080);

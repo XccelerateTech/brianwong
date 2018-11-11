@@ -23,10 +23,42 @@ $(function(){
                 data:{note: note}
             })
             .done(()=>{
-                $('.noteList').append(`<div class="note">
+                if($('.note:last-child').attr('id') !== undefined){
+                    var index = Number($('.note:last-child').attr('id'))+1
+                }else{
+                    var index = 0;
+                }
+                $('.noteList').append(`<div class="note" id="${index}">
                                             <p>${note}</p>
+                                            <div class="bin">delete</div>
                                         </div>`)
+
+                $('.bin').click(function(event){ //reload click event for new bin appended
+                    event.preventDefault();
+                    let index = $(this).parent().attr('id')
+                    $.ajax({
+                        method:'DELETE',
+                        url: '/note',
+                        data:{index: index}
+                    })
+                    .done(()=>{
+                        $(this).parent().remove();
+                    })
+                })
             })
         }
+    })
+
+    $('.bin').click(function(event){
+        event.preventDefault();
+        let index = $(this).parent().attr('id')
+        $.ajax({
+            method:'DELETE',
+            url: '/note',
+            data:{index: index}
+        })
+        .done(()=>{
+            $(this).parent().remove();
+        })
     })
 })
