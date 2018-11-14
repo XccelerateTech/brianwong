@@ -29,4 +29,7 @@ section h3 {
     background-color: #ff0000;
     width: 15%;
     height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }

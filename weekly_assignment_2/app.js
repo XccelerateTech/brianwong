@@ -1,8 +1,8 @@
 const express = require('express')
 const hds = require('express-handlebars')
-const bodyParser = require('body-parser')
 const NoteService = require('./NoteService')
 const basicAuth = require('express-basic-auth')
+const bodyParser = require('body-parser')
 
 let app = express();
 let user; 
@@ -12,10 +12,9 @@ const userList = new NoteService('userList.json')
 //set view engine
 app.engine('handlebars',hds({defaultLayout: 'main'}))
 app.set('view engine','handlebars')
-
 app.use(express.static('public'))
-
 app.use(bodyParser.urlencoded({ extended: false })) 
+
 
 //set basic authentication
 app.use(basicAuth({
@@ -34,9 +33,21 @@ async function myAuthrizer(username,password){
             return false;
         }
     })
-
-
 }
+
+
+app.put('/note',async (req,res)=>{ 
+    await note.addNote(req.body.note);
+    res.end();
+})
+
+
+//delete note in server
+app.delete('/note', async (req,res)=>{
+    await note.deleteNote(req.body.index);
+    res.end();
+})
+
 
 app.get('/',async (req,res)=>{ 
     let noteList = await note.listNote()
@@ -44,16 +55,6 @@ app.get('/',async (req,res)=>{
     res.render('hello',list)
 })
 
-//save note in server
-app.put('/note',async (req,res)=>{ 
-    await note.addNote(req.body.note);
-    res.end();
-})
 
-//delete note in server
-app.delete('/note', async (req,res)=>{
-    await note.deleteNote(req.body.index);
-    res.end();
-})
 
 app.listen(8080);
