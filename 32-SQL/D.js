@@ -42,7 +42,7 @@ inputStream
     async function trade(action,citrus,quantity){
         if(action == 'SELL'){
             let value = [citrus]
-            let result = await client.query("SELECT quantity FROM stock INNER JOIN citrus on stock.citrus_id = citrus.id WHERE citrus.name = $1 GROUP BY quantity;",value)
+            let result = await client.query("SELECT quantity FROM stock INNER JOIN citrus on stock.citrus_id = citrus.id WHERE citrus.name = $1;",value)
             if(result.rows[0].quantity < quantity){
                 throw new Error('not enough to sell')
             }

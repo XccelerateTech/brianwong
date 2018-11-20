@@ -4,7 +4,7 @@ const NoteService = require('./NoteService')
 const basicAuth = require('express-basic-auth')
 const bodyParser = require('body-parser')
 
-let app = express();
+const app = express();
 let user; 
 const note = new NoteService('notesFile.json')
 const userList = new NoteService('userList.json')
@@ -38,7 +38,7 @@ async function myAuthrizer(username,password){
 
 app.put('/note',async (req,res)=>{ 
     await note.addNote(req.body.note);
-    res.end();
+    res.send({note: req.body.note});
 })
 
 
