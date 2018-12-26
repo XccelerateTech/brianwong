@@ -1,0 +1,14 @@
+.searchBar {
+    margin: 20px 0 20px 80vw;
+
+}
+
+main {
+    display: flex;
+    align-content: space-between;
+}
+
+#addLink{
+    margin-top: 10px;
+}
+

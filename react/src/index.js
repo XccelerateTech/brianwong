@@ -2,13 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import App from './54/form/App';
+import App from './assignment1/App';
+import Form from './54/form/App'
 import {
     BrowserRouter,
     Route,
     Link,
     match
   } from 'react-router-dom';
+import './assignment1/App.css'
+
  
 function formatName(user){
     return (user.first+' '+user.last)
@@ -26,9 +29,7 @@ const element =
 </div>;
 
 ReactDOM.render(
-    <BrowserRouter>
-        <App></App>
-    </BrowserRouter>
+    <App></App>
     , document.getElementById('root'));
 
 

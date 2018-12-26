@@ -5,6 +5,8 @@ import {
 } from 'react-router-dom';
 import DisplayItem from './DisplayItem'
 
+
+
 const DisplayList = (props)=> {
     const listItems = props.list.map(l=>
         <li className="item" key={l.id}>
