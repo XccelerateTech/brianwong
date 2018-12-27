@@ -11,7 +11,7 @@ class LinkFrom extends Component{
             url: null,
         }
     }
-
+    
     handleNameChange = e => {
         this.setState({
             name: e.target.value
