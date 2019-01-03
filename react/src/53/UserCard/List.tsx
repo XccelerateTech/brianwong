@@ -1,6 +1,22 @@
 import React from 'react';
+import RootState from './RootState';
+import {connect} from 'react-redux';
 
-const List = (props) => {
+interface ListProps {
+    list: {
+        firstName: string,
+        lastName: string,
+        occupation: string
+    }[]
+}
+
+const mapStateToProps = (state: RootState) => {
+    return {
+        list: state.list
+    }
+}
+
+const List = (props: ListProps) => {
 
     const listGroup = props.list.map(user=>{
         return (
@@ -22,4 +38,5 @@ const List = (props) => {
     )
 }
 
-export default List;
+
+export default connect(mapStateToProps)(List);

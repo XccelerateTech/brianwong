@@ -1,32 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import App from './assignment1/App';
-import Form from './54/form/App'
-import {
-    BrowserRouter,
-    Route,
-    Link,
-    match
-  } from 'react-router-dom';
-import './assignment1/App.css'
+import App from './56/exercise-2/app'
 
- 
-function formatName(user){
-    return (user.first+' '+user.last)
-}
 
-const user = {
-    first: 'Milly',
-    last: 'Potter'
-}
 
-const element = 
-<div>
-    <h1 className='username' style={{color:'red'}}>Hello, {formatName(user)}</h1>
-    <h2>This is JSX</h2>
-</div>;
 
 ReactDOM.render(
     <App></App>

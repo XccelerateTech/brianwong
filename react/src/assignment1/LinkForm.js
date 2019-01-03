@@ -3,10 +3,11 @@ import {
     Route
 } from 'react-router-dom'
 
+
 class LinkFrom extends Component{
     constructor(props){
         super(props);
-        this.state = {
+        this.state= {
             name: null,
             url: null,
         }
