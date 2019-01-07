@@ -9,11 +9,11 @@ configure({ adapter: new Adapter() });
 
 describe('<Board />', ()=>{
     it('render a <Board /> component',()=>{
-        const wrapper = shallow(<Board />)
+        const wrapper = shallow(<Board />);
         expect(wrapper.find(Square).length).toEqual(9);
     })
 
     it('Board should divide the Square into 3 rows',()=>{
-        const wrapper = shallow(<Board />)
+        const wrapper = shallow(<Board />);
     })
 })
