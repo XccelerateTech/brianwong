@@ -1,13 +1,14 @@
 import * as React from 'react'
-import {createStore} from 'redux';
+import {createStore,applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import LinkList from './linkList'; 
 import UserList from './userList';
+import logger from 'redux-logger';
 import {rootReducer} from './reducers'
 
 
 
-const store = createStore<any,any,any,any>(rootReducer);
+const store = createStore<any,any,any,any>(rootReducer,applyMiddleware(logger));
 
 const App = () => (
     <Provider store={store}>

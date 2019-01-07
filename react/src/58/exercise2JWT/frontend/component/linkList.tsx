@@ -1,8 +1,10 @@
 import * as React from 'react';
 import {Dispatch} from 'redux'
 import {connect} from "react-redux";
-import RootState from './rootState'
-import {Actions,addLink,clearLink,removeLink} from './actions/actions';
+import RootState from '../rootState'
+import {Actions,addLink,clearLink,removeLink} from '../actions/actions';
+import {loadLink} from '../actions/actions';
+
 
 interface LinkListProps {
     links: {
@@ -11,6 +13,7 @@ interface LinkListProps {
     }[],
     addLink: () => void,
     clearLink: () => void,
+    reload: () => void,
     removeLink:(index:number) => void
 }
 
@@ -19,6 +22,7 @@ interface LinkListProps {
 const PureLinkList = (props: LinkListProps) => {
     return (
         <div>
+            <button onClick={props.reload}>Reload</button>
             <button onClick={props.addLink}>New Link</button>
             <button onClick={props.clearLink}>Clear</button>
             {props.links.map((l,index) => (
@@ -37,13 +41,17 @@ const mapStateToProps = (state: RootState) => {
     }
 }
 
+
+
 const mapDispatchToProps = (dispatch: Dispatch<Actions>) => {
     return {
         addLink: ()=> dispatch(addLink('Accelerate','http://www.acceleratedhk.com')),
 
         clearLink: () => dispatch(clearLink()),
 
-        removeLink: (index: number) => dispatch(removeLink(index))        
+        removeLink: (index: number) => dispatch(removeLink(index)),
+        
+        reload: () => dispatch(loadLink())
     }
 }
 

@@ -26,8 +26,32 @@ interface removeLinkAction extends Action{
     index: number
 }
 
-type Actions = AddLinkAction | clearLinkAction | removeLinkAction;
+export type Actions = AddLinkAction | clearLinkAction | removeLinkAction;
 
-export default Actions;
+export function addLink(title: string, url: string): AddLinkAction{
+    return {
+        type: ADD_LINK,
+        link: {
+            title: title,
+            url: url
+          }                
+    }
+}
+
+export function clearLink():clearLinkAction{
+    return {
+        type: CLEAR_LINK
+    }
+}
+
+export function removeLink(index:number):removeLinkAction{
+    return {
+        type: REMOVE_LINK,
+        index: index
+    }
+}
+
+
+
 
  

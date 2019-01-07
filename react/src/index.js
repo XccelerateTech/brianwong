@@ -2,7 +2,7 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import App from './56/exercise-2/app'
+import App from './58/exercise2JWT/frontend/app'
 
 
 

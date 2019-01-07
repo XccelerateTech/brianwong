@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {connect} from "react-redux";
-import RootState from './rootState';
+import RootState from '../rootState';
 
 interface UserListProps {
     users: {

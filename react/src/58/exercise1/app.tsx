@@ -1,16 +1,18 @@
 import * as React from 'react'
-import {createStore} from 'redux';
+import {createStore,applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import LinkList from './linkList'; 
 import UserList from './userList';
-import {rootReducer} from './reducers'
+import {rootReducer} from './reducers';
+import thunk from 'redux-thunk';
 
 
 
-const store = createStore<any,any,any,any>(rootReducer);
+const store = createStore<any,any,any,any>(rootReducer,applyMiddleware(thunk));
 
 const App = () => (
     <Provider store={store}>
+    {process.env.REACT_APP_API_SERVER}
         <div>
             <h2>Links</h2>
             <LinkList></LinkList>
